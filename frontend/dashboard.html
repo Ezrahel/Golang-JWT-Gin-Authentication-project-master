@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Hospital Name - User Dashboard</title>
+    <link rel="stylesheet" href="./static/css/dashboard.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="your_logo.png" id="logo" alt="Hospital Logo">
+        <div>
+            <img src="user_avatar.jpg" id="user-avatar" alt="User Avatar">
+            <h1>Your Hospital Name</h1>
+            
+        </div>
+        <div class="navbar">
+            <a href="#" class="quick-link">News Flash</a>
+            <a href="#" class="quick-link">Book Doctor's Appointment</a>
+            <a href="#" class="quick-link">Lodge Complaint</a>
+            <button id="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <section id="user-welcome">
+        <h2>Welcome to Your User Dashboard!</h2>
+        <p>Hello, [User Name]!</p>
+    </section>
+
+    <section id="health-summary">
+        <h2>Health Summary</h2>
+        <p>
+            <strong>Blood Pressure:</strong> [BP]
+            <br>
+            <strong>Heart Rate:</strong> [Heart Rate]
+            <br>
+            <strong>Blood Sugar:</strong> [Blood Sugar]
+        </p>
+        <a href="#" onclick="viewDetails('health-summary')">View Details</a>
+    </section>
+
+    <section id="appointments">
+        
+        <h2>Upcoming Appointments</h2>
+        <ul>
+            <li>
+                <strong>Appointment Date:</strong> [Date]
+                <br>
+                <strong>Doctor:</strong> [Doctor Name]
+                <br>
+                <a href="#" onclick="viewDetails('appointments', 1)">View Details</a>
+            </li>
+            <!-- Add more appointments as needed -->
+        </ul>
+    </section>
+
+    <section id="medical-records">
+        <h2>Medical Records</h2>
+        <ul>
+            <li>
+                <strong>Date:</strong> [Date]
+                <br>
+                <strong>Doctor:</strong> [Doctor Name]
+                <br>
+                <strong>Diagnosis:</strong> [Diagnosis]
+                <br>
+                <a href="#" onclick="viewDetails('medical-records', 1)">View Details</a>
+            </li>
+            <!-- Add more medical records as needed -->
+        </ul>
+    </section>
+
+    <section id="prescriptions">
+        <h2>Prescriptions</h2>
+        <ul>
+            <li>
+                <strong>Date:</strong> [Date]
+                <br>
+                <strong>Doctor:</strong> [Doctor Name]
+                <br>
+                <strong>Medication:</strong> [Medication]
+                <br>
+                <a href="#" onclick="viewDetails('prescriptions', 1)">View Details</a>
+            </li>
+            <!-- Add more prescriptions as needed -->
+        </ul>
+    </section>
+
+    <section id="billing">
+        <h2>Billing Information</h2>
+        <p>Your current balance is $[Amount]. Please make a payment by [Due Date].</p>
+        <a href="#" onclick="viewDetails('billing')">View Details</a>
+        <!-- Add more billing information as needed -->
+    </section>
+
+    <section id="quick-links">
+        <h2>Quick Links</h2>
+        <a href="#" class="quick-link">Lab Results</a>
+        <a href="#" class="quick-link">Messages</a>
+        <a href="#" class="quick-link">Health Records</a>
+        <!-- Add more quick links as needed -->
+    </section>
+
+    <section id="notifications">
+        <h2>Notifications</h2>
+        <div class="notification">
+            <p>[Notification Content]</p>
+            <a href="#" onclick="viewDetails('notifications', 1)">View Details</a>
+        </div>
+        <!-- Add more notifications as needed -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Hospital Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function logout() {
+            alert("Logout functionality goes here!");
+            // Redirect the user to the logout endpoint or perform other logout actions
+        }
+
+        function viewDetails(section, itemId) {
+            alert(`View details for ${section} - Item ID: ${itemId}`);
+            // Implement logic to fetch and display details from the server
+        }
+    </script>
+
+</body>
+
+</html>

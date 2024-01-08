@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fUOYE MEDICALS</title>
+    <!-- Include your CSS styles or link to an external stylesheet here -->
+    <link rel="stylesheet" href="./static/css/staffdashboard.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="./static/images/logo.png" id="logo" alt="Hospital Logo">
+        <div>
+            <img src="staff_avatar.jpg" id="staff-avatar" alt="Staff Avatar">
+            <h1>FUOYE MEDICALS</h1>
+            
+        </div>
+        <div class="navbar">
+            <a href="#" class="quick-link">News Flash</a>
+            <a href="#" class="quick-link">Task Management</a>
+            <a href="#" class="quick-link">See Complaint</a>
+            <button id="logout-btn" onclick="logout()">Logout</button>
+        </div>
+        <div class="patient-search">
+            <input type="text" id="search-input" placeholder="Enter your name of patient">
+        <button id="search-btn" onclick="search()">Search</button>
+        </div>
+    </header>
+
+    <section id="staff-welcome">
+        <h2>Welcome to Your Staff Dashboard!</h2>
+        <p>Hello, Dr. [Doctor Name]!</p>
+    </section>
+
+    <section id="staff-info">
+        <h2>Staff Information</h2>
+        <ul>
+            <li><strong>Staff ID:</strong> [Staff ID]</li>
+            <li><strong>Department:</strong> [Department]</li>
+            
+        </ul>
+    </section>
+
+    <section id="patient-management">
+        <h2>Patient To Attend To</h2>
+        <ul>
+            <li>
+                <strong>Patient Name:</strong> [Patient Name]
+                <br>
+                <strong>Room Number:</strong> [Room Number]
+                <br>
+                <a href="#" onclick="viewPatientDetails(1)">View Details</a>
+                <a href="#" onclick="updatePatientRecord(1)">Update Record</a>
+            </li>
+            
+        </ul>
+    </section>
+
+    <section id="appointments">
+        <h2>Appointments</h2>
+        <ul>
+            <li>
+                <strong>Appointment Date:</strong> [Date]
+                <br>
+                <strong>Patient:</strong> [Patient Name]
+                <br>
+                <a href="#" onclick="viewAppointmentDetails(1)">View Details</a>
+                <a href="#" onclick="manageAppointment(1)">Manage Appointment</a>
+            </li>
+            
+        </ul>
+    </section>
+
+    <section id="upcoming-surgeries">
+        <h2>Upcoming Surgeries</h2>
+        <ul>
+            <li>
+                <strong>Date:</strong> [Surgery Date]
+                <br>
+                <strong>Patient:</strong> [Patient Name]
+                <br>
+                <a href="#" onclick="viewSurgeryDetails(1)">View Details</a>
+            </li>
+            <!-- Add more upcoming surgeries as needed -->
+        </ul>
+    </section>
+
+    <section id="quick-links">
+        <h2>Quick Links</h2>
+        <a href="#" onclick="viewMedicalRecords()">Medical Records For Male</a>
+        <a href="#" onclick="viewMedicalRecords()">Medical Records For Female</a>
+        
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Hospital Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function search() {
+            var searchQuery = document.getElementById('search-input').value;
+            alert('Searching for: ' + searchQuery);
+            // Implement actual search functionality here
+        }
+        // Placeholder function for logout (you would typically handle this on the server)
+        function logout() {
+            alert("Logout functionality goes here!");
+            // Redirect the user to the logout endpoint or perform other logout actions
+        }
+
+        // Placeholder function for viewing patient details
+        function viewPatientDetails(patientId) {
+            alert(`View details for patient - Patient ID: ${patientId}`);
+            // Implement logic to fetch and display patient details from the server
+        }
+
+        // Placeholder function for updating patient records
+        function updatePatientRecord(patientId) {
+            alert(`Update patient record - Patient ID: ${patientId}`);
+            // Implement logic to update patient records on the server
+        }
+
+        // Placeholder function for viewing appointment details
+        function viewAppointmentDetails(appointmentId) {
+            alert(`View details for appointment - Appointment ID: ${appointmentId}`);
+            // Implement logic to fetch and display appointment details from the server
+        }
+
+        // Placeholder function for managing appointments
+        function manageAppointment(appointmentId) {
+            alert(`Manage appointment - Appointment ID: ${appointmentId}`);
+            // Implement logic to manage appointments on the server
+        }
+
+        // Placeholder function for viewing medical records
+        function viewMedicalRecord(recordId) {
+            alert(`View medical record - Record ID: ${recordId}`);
+            // Implement logic to fetch and display medical records from the server
+        }
+
+        // Placeholder function for viewing surgery details
+        function viewSurgeryDetails(surgeryId) {
+            alert(`View surgery details - Surgery ID: ${surgeryId}`);
+            // Implement logic to fetch and display surgery details from the server
+        }
+
+        // Placeholder function for viewing medical records
+        function viewMedicalRecords() {
+            alert("View medical records");
+            // Implement logic to navigate to medical records section
+        }
+
+        // Placeholder function for viewing upcoming surgeries
+        function viewUpcomingSurgeries() {
+            alert("View upcoming surgeries");
+            // Implement logic to navigate to upcoming surgeries section
+        }
+
+        // Placeholder function for opening specific tools
+        function openTool(toolName) {
+            alert(`Opening ${toolName} tool`);
+            // Implement logic to open the specified tool
+        }
+    </script>
+
+</body>
+
+</html>

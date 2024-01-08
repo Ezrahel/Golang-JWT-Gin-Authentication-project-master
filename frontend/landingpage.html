@@ -4,98 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Hospital Name</title>
-    <!-- Include your CSS styles or link to an external stylesheet here -->
-    <style>
-        /* Your custom styles go here */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background-color: #007BFF;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        section {
-            padding: 20px;
-            margin: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #007BFF;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-
-        /* Styles for review cards */
-        #reviews ul {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            list-style: none;
-            padding: 0;
-        }
-
-        .review-card {
-            width: calc(30% - 20px);
-            margin: 10px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            box-sizing: border-box;
-        }
-
-        .review-card img {
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            margin-bottom: 10px;
-        }
-    </style>
+    <title>FUOYE MEDICALS</title>
+    <link rel="stylesheet" href="./static/css/landingpage.css"> 
 </head>
 
 <body>
-
     <header>
-        <h1>Your Hospital Name</h1>
-        <p>Providing Quality Healthcare Services</p>
+        <img src="./static/images/logo.png" id="logo" alt="Hospital Logo">
+        <div>
+            <h1>FUOYE MEDICALS</h1>
+            
+        </div>
+        <div class="userbtn">
+            <button id="login-btn">Login / Signup</button>
+            
+            <p><a href="./about.html"> About Us</a></p>
+        
+        </div>
     </header>
 
-    <section id="equipment">
+    <section id="equipment" style="text-align: center;">
         <h2>Hospital Equipment</h2>
         <ul>
             <li>X-ray Machines</li>
             <li>CT Scanners</li>
             <li>Ultrasound Machines</li>
             <li>Operating Room Tools</li>
-            <!-- Add more equipment as needed -->
         </ul>
     </section>
 
@@ -106,26 +40,35 @@
             <li>General Surgery</li>
             <li>Maternity Services</li>
             <li>Cardiology</li>
-            <!-- Add more services as needed -->
         </ul>
     </section>
 
-    <section id="gallery">
-        <h2>Photo Gallery</h2>
-        <!-- Include images or videos of your hospital facilities -->
-        <img src="hospital_image1.jpg" alt="Hospital Image 1">
-        <img src="hospital_image2.jpg" alt="Hospital Image 2">
-        <!-- Add more images as needed -->
+    <section id="gallery" style="text-align: center;">
+        <h2>Our Photo Gallery</h2>
+        <ul>
+            <li class="gallery-card">
+                <img src="./static/images/service0.jpg" alt="gallery 1">
+            </li>
+            <li class="gallery-card">
+                <img src="./static/images/service.jpg" alt="gallery 2">
+            </li>
+            <li class="gallery-card">
+                <img src="./static/images/hospital0.jpg" alt="gallery 3">
+            </li>
+            <li class="gallery-card">
+                <img src="./static/images/hospital0.jpg" alt="gallery 3">
+            </li>
+        </ul>
     </section>
 
-    <section id="about">
+    <section id="about" style="text-align: center;">
         <h2>About Us</h2>
         <p>Your Hospital Name is dedicated to providing compassionate and high-quality healthcare to our community.
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel justo sit amet est facilisis dictum.
             Quisque ut sagittis nulla.</p>
     </section>
 
-    <section id="contact">
+    <section id="contact" style="text-align: center;">
         <h2>Contact Us</h2>
         <p>For appointments and inquiries, please contact us:</p>
         <p>Email: info@yourhospital.com</p>
@@ -137,25 +80,24 @@
         <h2>Patient Reviews</h2>
         <ul>
             <li class="review-card">
-                <img src="patient1_avatar.jpg" alt="Patient 1">
+                <img src="./static/images/patient2.jpg" alt="Patient 1">
                 <p><strong>John Doe</strong></p>
                 <p>"I had a great experience at Your Hospital Name. The staff was caring and professional, and the
                     facilities were top-notch."</p>
             </li>
             <li class="review-card">
-                <img src="patient2_avatar.jpg" alt="Patient 2">
+                <img src="./static/images/patient3.jpg" alt="Patient 2">
                 <p><strong>Jane Smith</strong></p>
                 <p>"The doctors and nurses at Your Hospital Name provided excellent care for my family. Highly
                     recommended!"</p>
             </li>
             <li class="review-card">
-                <img src="patient2_avatar.jpg" alt="Patient 2">
+                <img src="./static/images/patient3.jpg" alt="Patient 3">
                 <p><strong>Jane Smith</strong></p>
                 <p>"The doctors and nurses at Your Hospital Name provided excellent care for my family. Highly
                     recommended!"</p>
             </li>
             
-            <!-- Add more reviews as needed -->
         </ul>
     </section>
 

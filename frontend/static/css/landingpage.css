@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+#logo {
+    width: 50px; /* Adjust the logo width as needed */
+    height: auto;
+    border-radius: 5px;
+    margin-right: 90%;
+}
+#login-btn {
+    background-color: #fff;
+    color: #007BFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+header {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.userbtn{
+    position: absolute;
+        top: 5px;
+        right: 5px;
+}
+.userbtn p{
+    background-color: #fff;
+    color: #007BFF;
+    padding: 5px 5px;
+    padding-left: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #007BFF;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Styles for review cards */
+#reviews ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+}
+
+.review-card {
+    width: calc(30% - 20px);
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.review-card img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+
+#gallery {
+    background-color: #ffffff; /* Background color for the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle elevation effect */
+    padding: 20px;
+    border-radius: 8px; /* Border radius for rounded corners */
+}
+
+#gallery h2 {
+    color: #333333; /* Text color for the heading */
+}
+
+#gallery ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribute items evenly in the row */
+}
+
+.gallery-card {
+    width: calc(33.33% - 20px); /* Set width for each card with margin between cards */
+    margin-bottom: 20px;
+    border-radius: 8px; /* Border radius for rounded corners */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for individual cards */
+}
+
+.gallery-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Border radius for rounded corners */
+}

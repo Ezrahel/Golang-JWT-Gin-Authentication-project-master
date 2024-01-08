@@ -1,0 +1,113 @@
+/* Reset some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    
+    align-items: center;
+}
+.navbar{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-left: 90%;
+    display: flex;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+.navbar a{
+    color: #f4f4f4;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+#logo {
+    width: 80px;
+    height: auto;
+}
+
+#user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+#logout-btn {
+    background-color: #fff;
+    color: #007BFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #007BFF;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+#health-summary {
+    background-color: #f0f8ff;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+#quick-links {
+    margin-top: 20px;
+}
+
+.quick-link {
+    display: inline-block;
+    margin-right: 20px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+#notifications {
+    margin-top: 20px;
+}
+
+.notification {
+    background-color: #e0e0e0;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
