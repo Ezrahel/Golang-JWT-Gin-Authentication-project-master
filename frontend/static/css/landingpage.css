@@ -26,12 +26,12 @@ header {
     padding: 20px;
     text-align: center;
 }
-.userbtn{
+.Doctorbtn{
     position: absolute;
         top: 5px;
         right: 5px;
 }
-.userbtn p{
+.Doctorbtn p{
     background-color: #fff;
     color: #007BFF;
     padding: 5px 5px;

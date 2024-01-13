@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./static/css/login.css">
+</head>
+
+<body>
+
+    <form id="login-form" onsubmit="submitForm(event)">
+        <h1>Login</h1>
+
+        <label for="Doctorname">Doctorname:</label>
+        <input type="text" id="Doctorname" name="Doctorname" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+        <p class="error-message" id="error-message"></p>
+    </form>
+
+    <script>
+        async function submitForm(event) {
+            event.preventDefault();
+    
+            // Fetch login values
+            const Doctorname = document.getElementById('Doctorname').value;
+            const password = document.getElementById('password').value;
+    
+            try {
+                // Make AJAX request to the Go server
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        Email: Doctorname,
+                        Password: password,
+                    }),
+                });
+    
+                const data = await response.json();
+    
+                if (response.ok) {
+                    // Login successful, redirect to the dashboard or another page
+                    window.location.href = '/dashboard';
+                } else {
+                    // Display error message
+                    document.getElementById('error-message').innerText = data.error || 'Invalid credentials';
+                }
+            } catch (error) {
+                console.error('Error during login:', error);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

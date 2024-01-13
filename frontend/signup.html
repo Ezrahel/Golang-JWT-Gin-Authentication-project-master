@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="./static/css/signup.css">
+</head>
+
+<body>
+
+    <form id="signup-form" onsubmit="submitForm(event)">
+        <h1>Signup</h1>
+
+        <label for="Doctorname">Doctorname:</label>
+        <input type="text" id="Doctorname" name="Doctorname" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="Doctor-type">I am a:</label>
+        <select id="Doctor-type" name="Doctor-type" onchange="showDetailsForm()" required>
+            <option value="" disabled selected>Select Doctor Type</option>
+            <option value="staff">Staff</option>
+            <option value="patient">Patient</option>
+        </select>
+
+        <!-- Staff Details Section -->
+        <div class="staff-details">
+            <label for="staff-role">Staff Role:</label>
+            <input type="text" id="staff-role" name="staff-role" required>
+
+            <label for="educational-background">Educational Background:</label>
+            <input type="text" id="educational-background" name="educational-background" required>
+        </div>
+
+        <!-- Patient Details Section -->
+        <div class="patient-details">
+            <label for="patient-condition">Patient Condition:</label>
+            <input type="text" id="patient-condition" name="patient-condition" required>
+        </div>
+
+        <button type="submit">Signup</button>
+    </form>
+
+    <script>
+        function showDetailsForm() {
+            const DoctorType = document.getElementById('Doctor-type').value;
+            const staffDetails = document.querySelector('.staff-details');
+            const patientDetails = document.querySelector('.patient-details');
+
+            // Hide both details sections initially
+            staffDetails.style.display = 'none';
+            patientDetails.style.display = 'none';
+
+            // Show the relevant details section based on Doctor type
+            if (DoctorType === 'staff') {
+                staffDetails.style.display = 'block';
+            } else if (DoctorType === 'patient') {
+                patientDetails.style.display = 'block';
+            }
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+
+            // Fetch form values
+            const Doctorname = document.getElementById('Doctorname').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const DoctorType = document.getElementById('Doctor-type').value;
+
+            let additionalDetails = '';
+
+            // Fetch additional details based on Doctor type
+            if (DoctorType === 'staff') {
+                const staffRole = document.getElementById('staff-role').value;
+                const educationalBackground = document.getElementById('educational-background').value;
+
+                additionalDetails = `Staff Role: ${staffRole}, Educational Background: ${educationalBackground}`;
+            } else if (DoctorType === 'patient') {
+                additionalDetails = document.getElementById('patient-condition').value;
+            }
+
+            // Perform signup logic (replace with actual signup API call)
+            alert(`Signup successful!\nDoctorname: ${Doctorname}\nEmail: ${email}\nPassword: ${password}\nDoctor Type: ${DoctorType}\nAdditional Details: ${additionalDetails}`);
+        }
+    </script>
+
+</body>
+
+</html>

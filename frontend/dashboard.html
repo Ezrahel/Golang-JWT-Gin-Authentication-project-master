@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Hospital Name - User Dashboard</title>
+    <title>{{.title}}</title>
     <link rel="stylesheet" href="./static/css/dashboard.css">
 </head>
 
@@ -13,7 +13,7 @@
     <header>
         <img src="your_logo.png" id="logo" alt="Hospital Logo">
         <div>
-            <img src="user_avatar.jpg" id="user-avatar" alt="User Avatar">
+            <img src="Doctor_avatar.jpg" id="Doctor-avatar" alt="Doctor Avatar">
             <h1>Your Hospital Name</h1>
             
         </div>
@@ -21,13 +21,17 @@
             <a href="#" class="quick-link">News Flash</a>
             <a href="#" class="quick-link">Book Doctor's Appointment</a>
             <a href="#" class="quick-link">Lodge Complaint</a>
-            <button id="logout-btn" onclick="logout()">Logout</button>
+            {{if .IsLoggedIn}}
+        <button id="logout-btn" onclick="logout()">Logout</button>
+            {{else}}
+    <button id="login-btn" onclick="login()">Login</button>
+            {{end}}
         </div>
     </header>
 
-    <section id="user-welcome">
-        <h2>Welcome to Your User Dashboard!</h2>
-        <p>Hello, [User Name]!</p>
+    <section id="Doctor-welcome">
+        <h2>Welcome to Your Doctor Dashboard!</h2>
+        <p>Hello, [Doctor Name]!</p>
     </section>
 
     <section id="health-summary">
@@ -120,7 +124,7 @@
     <script>
         function logout() {
             alert("Logout functionality goes here!");
-            // Redirect the user to the logout endpoint or perform other logout actions
+            // Redirect the Doctor to the logout endpoint or perform other logout actions
         }
 
         function viewDetails(section, itemId) {

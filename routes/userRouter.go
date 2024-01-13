@@ -1,13 +1,15 @@
 package routes
 
-import(
+import (
 	controller "github.com/akhil/golang-jwt-project/controllers"
 	"github.com/akhil/golang-jwt-project/middleware"
 	"github.com/gin-gonic/gin"
 )
 
-func UserRoutes(incomingRoutes *gin.Engine){
+func DoctorRoutes(incomingRoutes *gin.Engine) {
 	incomingRoutes.Use(middleware.Authenticate())
-	incomingRoutes.GET("/users", controller.GetUsers())
-	incomingRoutes.GET("/users/:user_id", controller.GetUser())
+	incomingRoutes.GET("/doctors", controller.GetDoctors())
+	incomingRoutes.GET("/doctors/:doctor_id", controller.GetDoctor())
+	incomingRoutes.GET("/doctors/:doctor_dashboard", controller.Index)
+
 }

@@ -1,14 +1,15 @@
 package main
 
-import(
-	routes "github.com/akhil/golang-jwt-project/routes"
-	"os"
+import (
 	"log"
+	"os"
+
+	routes "github.com/akhil/golang-jwt-project/routes"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 )
 
-func main(){
+func main() {
 	err := godotenv.Load(".env")
 
 	if err != nil {
@@ -16,23 +17,23 @@ func main(){
 	}
 	port := os.Getenv("PORT")
 
-	if port==""{
-		port="8000"
+	if port == "" {
+		port = "8000"
 	}
 
 	router := gin.New()
 	router.Use(gin.Logger())
 
 	routes.AuthRoutes(router)
-	routes.UserRoutes(router)
+	routes.DoctorRoutes(router)
 
-	router.GET("/api-1", func(c *gin.Context){
-		c.JSON(200, gin.H{"success":"Access granted for api-1"})
+	router.GET("/api-1", func(c *gin.Context) {
+		c.JSON(200, gin.H{"success": "Access granted for api-1"})
 	})
 
-	router.GET("/api-2", func(c *gin.Context){
-		c.JSON(200, gin.H{"success":"Access granted for api-2"})
+	router.GET("/api-2", func(c *gin.Context) {
+		c.JSON(200, gin.H{"success": "Access granted for api-2"})
 	})
 
 	router.Run(":" + port)
-}	
+}
