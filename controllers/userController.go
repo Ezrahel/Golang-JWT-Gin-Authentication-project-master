@@ -132,7 +132,9 @@ func Login() gin.HandlerFunc {
 
 		if foundDoctor.Email == nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Doctor not found"})
+			return
 		}
+
 		token, refreshToken, _ := helper.GenerateAllTokens(*foundDoctor.Email, *foundDoctor.First_name, *foundDoctor.Last_name, *foundDoctor.Doctor_type, foundDoctor.Doctor_id)
 		helper.UpdateAllTokens(token, refreshToken, foundDoctor.Doctor_id)
 		err = DoctorCollection.FindOne(ctx, bson.M{"Doctor_id": foundDoctor.Doctor_id}).Decode(&foundDoctor)
@@ -141,10 +143,22 @@ func Login() gin.HandlerFunc {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 			return
 		}
-		c.JSON(http.StatusOK, foundDoctor)
-		c.HTML(http.StatusOK, "frontend/login.html", gin.H{
-			"title": "Staff Login",
-		})
+
+		// Check the Doctor_type to determine which page to render
+		if foundDoctor.Doctor_type != nil && *foundDoctor.Doctor_type == "ADMIN" {
+			c.HTML(http.StatusOK, "dashboard.html", gin.H{
+				"Doctor": foundDoctor,
+			})
+		}
+		if foundDoctor.Doctor_type != nil && *foundDoctor.Doctor_type == "NURSE" {
+			c.HTML(http.StatusOK, "nursedashboard.html", gin.H{
+				"Nurse": foundDoctor,
+			})
+		} else {
+			c.HTML(http.StatusOK, "home.html", gin.H{
+				"Doctor": foundDoctor,
+			})
+		}
 	}
 }
 

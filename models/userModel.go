@@ -14,7 +14,7 @@ type Doctor struct {
 	Email         *string            `json:"email" validate:"email,required"`
 	Phone         *string            `json:"phone" validate:"required"`
 	Token         *string            `json:"token"`
-	Doctor_type   *string            `json:"doctor_type" validate:"required,eq=ADMIN|eq=PATIENT|eq=Nurse"`
+	Doctor_type   *string            `json:"doctor_type" validate:"required,eq=ADMIN|eq=PATIENT|eq=NURSE"`
 	Refresh_token *string            `json:"refresh_token"`
 	Created_at    time.Time          `json:"created_at"`
 	Updated_at    time.Time          `json:"updated_at"`

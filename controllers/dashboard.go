@@ -15,10 +15,11 @@ type Appointment struct {
 	DayOfWeek time.Weekday `json:"dayOfWeek"`
 	Purpose   string       `json:"purpose"`
 }
+type NewDoctor struct {
+	Doctor_type *string `json:"doctor_type" validate:"required,eq=ADMIN|eq=PATIENT|eq=Nurse"`
+}
 
-type DashboardController struct{}
-
-func (u *models.Doctor) GetUserRole() string {
+func (u *NewDoctor) GetUserRole() string {
 	if u.Doctor_type == nil {
 		return "Unknown"
 	}
@@ -52,6 +53,7 @@ func (u *models.Doctor) GetUserRole() string {
 			})
 		})
 	}
+	return userType
 }
 
 //Pending functionalities
